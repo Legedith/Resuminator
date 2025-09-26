@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resuminator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Resuminator</h1>
+        <div id="config-section">
+            <h2>Configuration</h2>
+            <input type="password" id="api-key" placeholder="Enter your OpenAI API Key">
+            <input type="text" id="model" placeholder="Enter model name (e.g., gpt-4)">
+            <button id="config-btn">Save Configuration</button>
+        </div>
+
+        <div id="upload-section">
+            <h2>Upload Resume</h2>
+            <input type="file" id="resume-file" accept=".docx, .tex">
+            <button id="upload-btn">Upload</button>
+        </div>
+
+        <div id="main-app" class="hidden">
+            <div class="main-container">
+                <div id="chat-container">
+                    <h2>Chat</h2>
+                    <div id="chat-box"></div>
+                    <input type="text" id="chat-input" placeholder="Type your message...">
+                    <button id="send-btn">Send</button>
+                </div>
+                <div id="preview-container">
+                    <h2>Preview</h2>
+                    <div class="view-switch">
+                        <button id="preview-btn" class="active">Preview</button>
+                        <button id="code-btn">Code</button>
+                    </div>
+                    <div id="resume-preview">
+                        <iframe id="pdf-preview" src=""></iframe>
+                        <textarea id="code-view" class="hidden"></textarea>
+                    </div>
+                    <button id="download-btn">Download PDF</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
